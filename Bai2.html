@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function rutgon(a,b){
+        if(b === 0){
+            return a;
+        }else{
+            return rutgon(a,b % b);
+        }
+    }
+    function check(tu1, mau1, tu2, mau2){
+        let rutgon1 = rutgon(tu1, mau1);
+        let rutgon2 = rutgon(tu2, mau2);
+        tu1 = tu1 / rutgon1;
+        mau1 = mau1 / rutgon1;
+        tu2 = tu2 / rutgon2;
+        mau2 = mau2 / rutgon2;
+        if (tu1 * mau1 === tu2 * mau2){
+           return true;
+        }else {
+            return false;
+        }
+    }
+    let tu1 = parseInt(prompt('Nhap tu so cua phan so 1:'));
+    let mau1 = parseInt(prompt('Nhap mau so cua phan so 1:'));
+    let tu2 = parseInt(prompt('Nhap tu so cua phan so 2:'));
+    let mau2 = parseInt(prompt('Nhap mau so cua phan so 2:'));
+    if(check(tu1, mau1, tu2,mau2)){
+        alert('Hai phan so bang nhau');
+    }else{
+        alert('Hai phan so khong bang nhau');
+    }
+</script>
+
+</body>
+</html>

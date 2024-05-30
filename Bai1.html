@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function main() {
+        let n = parseInt(prompt('Nhap so luong phan tu cua mang (< 50): '));
+        if (n > 50 || isNaN(n) || n < 1) {
+            alert('So luong phan tu khong hop le. Vui long nhap lai.');
+            return;
+        }
+
+        let a = [];
+        console.log('Nhap cac phan tu cua mang:');
+        for (let i = 0; i < n; i++) {
+            a[i] = parseInt(prompt(`Nhap phan tu thu ${i + 1}: `));
+        }
+
+        function isPrime(number) {
+            if (number < 2) {
+                return false;
+            }
+            for (let i = 2; i <= Math.sqrt(number); i++) {
+                if (number % i === 0) {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        let b = a.filter(isPrime);
+
+        document.write('Mang a:', a);
+        document.write('<br/>');
+        document.write('Mang b:', b);
+    }
+    main();
+
+</script>
+</body>
+</html>
